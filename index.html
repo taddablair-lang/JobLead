@@ -1,1 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>JobLead</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+        <div class="logo">
+            <span>Job</span>Lead
+        </div>
+
+        <nav>
+            <button class="nav-button active" data-page="dashboard">
+                Dashboard
+            </button>
+
+            <button class="nav-button" data-page="leads">
+                Leads
+            </button>
+
+            <button class="nav-button" data-page="quotes">
+                Quote Form
+            </button>
+
+            <button class="nav-button" data-page="business">
+                Business Setup
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section id="dashboard" class="page active">
+
+            <div class="page-header">
+                <div>
+                    <p class="eyebrow">YOUR BUSINESS</p>
+                    <h1>Dashboard</h1>
+                    <p class="subtitle">
+                        Keep track of your leads and turn inquiries into jobs.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="addTestLead">
+                    + Add Test Lead
+                </button>
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <p>Total Leads</p>
+                    <h2 id="totalLeads">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>New Leads</p>
+                    <h2 id="newLeads">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Follow-Ups</p>
+                    <h2 id="followUps">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Booked Jobs</p>
+                    <h2 id="bookedJobs">0</h2>
+                </div>
+
+            </div>
+
+
+            <!-- RECENT LEADS -->
+
+            <div class="card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Recent Leads</h2>
+                        <p>Your newest customer inquiries.</p>
+                    </div>
+
+                    <button class="secondary-button" data-page="leads">
+                        View All
+                    </button>
+                </div>
+
+                <div id="recentLeads" class="lead-list">
+
+                    <div class="empty-state">
+                        <div class="empty-icon">📋</div>
+                        <h3>No leads yet</h3>
+                        <p>
+                            Add a test lead or send someone your quote form.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LEADS ================= -->
+
+        <section id="leads" class="page">
+
+            <div class="page-header">
+
+                <div>
+                    <p class="eyebrow">CUSTOMERS</p>
+                    <h1>Leads</h1>
+                    <p class="subtitle">
+                        Manage every potential customer in one place.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="addLeadButton">
+                    + Add Lead
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="search-row">
+
+                    <input
+                        type="text"
+                        id="leadSearch"
+                        class="search-input"
+                        placeholder="Search leads..."
+                    >
+
+                </div>
+
+
+                <div id="allLeads" class="lead-list">
+
+                    <div class="empty-state">
+                        <div class="empty-icon">👥</div>
+                        <h3>No leads yet</h3>
+                        <p>
+                            Your customer inquiries will appear here.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= QUOTE FORM ================= -->
+
+        <section id="quotes" class="page">
+
+            <div class="page-header">
+
+                <div>
+                    <p class="eyebrow">CUSTOMER FORM</p>
+                    <h1>Quote Request</h1>
+                    <p class="subtitle">
+                        This is the form your customers can use to request a quote.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="card quote-card">
+
+                <div class="quote-heading">
+                    <div class="quote-logo">
+                        JobLead
+                    </div>
+
+                    <h2>Request a Quote</h2>
+
+                    <p>
+                        Fill out the form below and we'll get back to you.
+                    </p>
+                </div>
+
+
+                <form id="quoteForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                Name
+                            </label>
+
+                            <input
+                                id="customerName"
+                                name="name"
+                                type="text"
+                                placeholder="John Smith"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customerPhone">
+                                Phone
+                            </label>
+
+                            <input
+                                id="customerPhone"
+                                name="phone"
+                                type="tel"
+                                placeholder="(555) 555-5555"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customerEmail">
+                                Email
+                            </label>
+
+                            <input
+                                id="customerEmail"
+                                name="email"
+                                type="email"
+                                placeholder="john@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customerService">
+                                Service Needed
+                            </label>
+
+                            <input
+                                id="customerService"
+                                name="service"
+                                type="text"
+                                placeholder="Lawn mowing"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="customerAddress">
+                                Address
+                            </label>
+
+                            <input
+                                id="customerAddress"
+                                name="address"
+                                type="text"
+                                placeholder="123 Main Street"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="customerMessage">
+                                Tell us what you need
+                            </label>
+
+                            <textarea
+                                id="customerMessage"
+                                name="message"
+                                rows="5"
+                                placeholder="Describe the job..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-button"
+                    >
+                        Submit Quote Request
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= BUSINESS SETUP ================= -->
+
+        <section id="business" class="page">
+
+            <div class="page-header">
+
+                <div>
+                    <p class="eyebrow">SETTINGS</p>
+                    <h1>Business Setup</h1>
+                    <p class="subtitle">
+                        Customize JobLead for your business.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <form id="businessForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="businessName">
+                                Business Name
+                            </label>
+
+                            <input
+                                id="businessName"
+                                name="businessName"
+                                type="text"
+                                placeholder="Your Business"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="ownerName">
+                                Owner Name
+                            </label>
+
+                            <input
+                                id="ownerName"
+                                name="owner"
+                                type="text"
+                                placeholder="Your Name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="businessPhone">
+                                Business Phone
+                            </label>
+
+                            <input
+                                id="businessPhone"
+                                name="phone"
+                                type="tel"
+                                placeholder="(555) 555-5555"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="businessEmail">
+                                Business Email
+                            </label>
+
+                            <input
+                                id="businessEmail"
+                                name="email"
+                                type="email"
+                                placeholder="business@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="businessAddress">
+                                Business Address
+                            </label>
+
+                            <input
+                                id="businessAddress"
+                                name="address"
+                                type="text"
+                                placeholder="123 Main Street"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="serviceArea">
+                                Service Area
+                            </label>
+
+                            <input
+                                id="serviceArea"
+                                name="serviceArea"
+                                type="text"
+                                placeholder="Logan, Smithfield, North Logan..."
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="services">
+                                Services
+                            </label>
+
+                            <textarea
+                                id="services"
+                                name="services"
+                                rows="4"
+                                placeholder="List the services your business provides..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save Business Information
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+</html>
